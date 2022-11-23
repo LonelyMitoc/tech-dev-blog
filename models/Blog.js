@@ -11,17 +11,23 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    blog_title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    body: {
-      type: DataTypes.STRING,
+    blog_content: {
+      type: DataTypes.TEXT,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    },
+    date_updated: {
+      type: DataTypes.DATE,
+      defaultValue: "",
+      onUpdate: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -47,4 +53,4 @@ Blog.init(
   }
 );
 
-module.exports = Project;
+module.exports = Blog;
