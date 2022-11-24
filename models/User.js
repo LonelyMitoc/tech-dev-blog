@@ -23,7 +23,9 @@ User.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      // prevents duplicate email in the db
       unique: true,
+      // validates the input is in an email format
       validate: {
         isEmail: true,
       },
