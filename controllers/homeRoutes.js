@@ -80,7 +80,6 @@ router.get('/blog/:id', async (req, res) => {
   }
 });
 
-// Maybe should be put in commentRoutes.js?
 router.get('/updateComment/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.findByPk(req.params.id, {
