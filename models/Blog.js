@@ -26,7 +26,6 @@ Blog.init(
     },
     date_updated: {
       type: DataTypes.DATE,
-      defaultValue: "",
       onUpdate: DataTypes.NOW,
     },
     user_id: {
