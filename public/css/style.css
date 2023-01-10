@@ -1,5 +1,10 @@
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
+  background: lightblue;
+}
+
+body {
+  background: rgb(250, 235, 235);
 }
 
 .no-button {

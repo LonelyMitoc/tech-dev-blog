@@ -22,6 +22,7 @@ router.get('/', withAuth, async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -29,7 +30,7 @@ router.get('/', withAuth, async (req, res) => {
 // Routes to newBlog page for writing new blogs
 router.get('/newBlog', withAuth, async (req, res) => {
   if (req.session.logged_in) {
-    res.render('newBlog');
+    res.render('newBlog', { logged_in: req.session.logged_in });
   } else {
     res.redirect('/login');
   }
@@ -52,6 +53,7 @@ router.get('/updateBlog/:id', withAuth, async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
