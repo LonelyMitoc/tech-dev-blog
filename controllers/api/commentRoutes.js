@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         },
         {
           model: Blog,
-          attributes: ['username'];
+          attributes: ['username'],
         },
       ],
       where: {
